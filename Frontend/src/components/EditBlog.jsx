@@ -35,7 +35,7 @@ const EditBlog = () => {
 
     try {
       const response = await axios.post(
-        `${api}/api/blog/edit-blog/${address}`,
+        `/api/blog/edit-blog/${address}`,
         formData,
         {
           headers: {

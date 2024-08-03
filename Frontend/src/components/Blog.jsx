@@ -21,7 +21,7 @@ const Blog = () => {
 
     try {
       const response = await axios.post(
-        `${api}/api/blog/comment/${blog._id}`,
+        `/api/blog/comment/${blog._id}`,
         { content },
         {
           withCredentials: true,

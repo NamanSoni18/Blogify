@@ -4,30 +4,8 @@ const User = require("../models/user");
 const {
     checkForAuthenticationCookie,
 } = require("../middlewares/authentication");
-const express = require("express");
-const cors = require("cors");
 
 const router = Router();
-const app = express();
-
-// const allowedOrigins = ["https://blogify-naman.netlify.app"];
-
-// app.use(
-//     cors({
-//         origin: function (origin, callback) {
-//             if (!origin) return callback(null, true);
-//             if (allowedOrigins.indexOf(origin) === -1) {
-//                 const msg =
-//                     "The CORS policy for this site does not allow access from the specified Origin.";
-//                 return callback(new Error(msg), false);
-//             }
-//             return callback(null, true);
-//         },
-//         credentials: true,
-//     })
-// );
-
-app.use(express.json());
 
 router.post(
     "/signin",
@@ -42,9 +20,6 @@ router.post(
             res.cookie("token", token, {
                 httpOnly: true,
                 maxAge: 24 * 60 * 60 * 1000,
-                secure: process.env.NODE_ENV === "production",
-                sameSite:
-                    process.env.NODE_ENV === "production" ? "None" : "Lax",
             });
             res.status(200).json({ message: "Signin successful" });
         } catch (error) {

@@ -21,7 +21,7 @@ const AddBlog = () => {
 
     try {
       const response = await axios.post(
-        `${api}/api/blog`,
+        `/api/blog`,
         formData,
         {
           headers: {
