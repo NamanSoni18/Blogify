@@ -2,7 +2,8 @@ const { validateToken } = require("../services/authentication");
 
 function checkForAuthenticationCookie(cookieName, title) {
     return (req, res, next) => {
-        const tokenCookieValue = req.cookies[cookieName];
+        const tokenCookieValue = req.headers['x-auth-token'];
+        console.log(tokenCookieValue);
         if (!tokenCookieValue) {
             if (title === "home") {
                 return next();

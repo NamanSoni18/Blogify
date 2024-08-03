@@ -17,11 +17,7 @@ router.post(
                 email,
                 password
             );
-            res.cookie("token", token, {
-                httpOnly: true,
-                maxAge: 24 * 60 * 60 * 1000,
-            });
-            res.status(200).json({ message: "Signin successful" });
+            res.status(200).json({ message: "Signin successful", token });
         } catch (error) {
             console.error("Error during sign-in:", error);
             if (
@@ -47,11 +43,7 @@ router.post("/signup", async (req, res) => {
         });
 
         const token = await User.matchPasswordAndGenerateToken(email, password);
-        res.cookie("token", token, {
-            httpOnly: true, // Helps prevent XSS attacks0
-            maxAge: 24 * 60 * 60 * 1000,
-        });
-        res.status(200).json({ message: "Signin successful" });
+        res.status(200).json({ message: "Signin successful", token });
     } catch (error) {
         console.error("Error during sign-in:", error);
         if (

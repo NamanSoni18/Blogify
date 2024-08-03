@@ -17,17 +17,12 @@ const Signin = () => {
         const email = oldEmail.current.value;
         const password = oldPassword.current.value;
         try {
-            const response = await axios.post(
-                `/api/user/signin`,
-                {
-                    email,
-                    password,
-                },
-                {
-                    withCredentials: true,
-                }
-            );
+            const response = await axios.post(`/api/user/signin`, {
+                email,
+                password,
+            });
             console.log(response.data);
+            localStorage.setItem("token", response.data.token);
             setUser([]);
             notifySuccess("Login Successful");
             navigate("/");

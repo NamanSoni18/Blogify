@@ -32,6 +32,7 @@ const EditBlog = () => {
     formData.append("title", title);
     formData.append("body", body);
     formData.append("coverImage", coverImage);
+    const token = localStorage.getItem("token");
 
     try {
       const response = await axios.post(
@@ -40,8 +41,8 @@ const EditBlog = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            "x-auth-token": token,
           },
-          withCredentials: true,
         }
       );
 

@@ -33,15 +33,19 @@ const BlogsUserStoreProvider = ({ children }) => {
         const controller = new AbortController();
         const signal = controller.signal;
 
+        const token = localStorage.getItem("token");
+
         (async () => {
             try {
-                const response = await axios.get(
-                    `/api/home`,
-                    { signal },
-                    { withCredentials: true }
-                );
+                const response = await axios.get(`/api/home`, {
+                    signal,
+                    headers: {
+                        "x-auth-token": token,
+                    }
+                });
                 setUser(response.data.user);
                 setBlogs(response.data.blogs);
+                console.log("Hello");
             } catch (error) {
                 if (axios.isCancel(error)) {
                     console.log("Request canceled", error.message);
@@ -61,7 +65,7 @@ const BlogsUserStoreProvider = ({ children }) => {
         return () => {
             controller.abort();
         };
-    }, []);
+    }, [navigate, location.pathname]);
 
     const blogPage = useCallback(
         async (address) => {
