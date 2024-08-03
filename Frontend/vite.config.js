@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   return {
     server: {
       proxy: {
-        "/api": "http://localhost:8000",
+        "/api": "https://blogify-mexx.onrender.com",
       },
     },
     plugins: [react()],

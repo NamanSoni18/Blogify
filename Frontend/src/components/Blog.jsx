@@ -22,7 +22,7 @@ const Blog = () => {
 
         try {
             const response = await axios.post(
-                `/api/blog/comment/${blog._id}`,
+                `${api}/api/blog/comment/${blog._id}`,
                 { content },
                 {
                     headers: {

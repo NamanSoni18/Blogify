@@ -18,7 +18,7 @@ const Signup = () => {
         const password = oldPassword.current.value;
         try {
             const response = await axios.post(
-                `/api/user/signup`,
+                `${api}/api/user/signup`,
                 {
                     fullName,
                     email,

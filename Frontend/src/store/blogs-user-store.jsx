@@ -37,7 +37,7 @@ const BlogsUserStoreProvider = ({ children }) => {
 
         (async () => {
             try {
-                const response = await axios.get(`/api/home`, {
+                const response = await axios.get(`${api}/api/home`, {
                     signal,
                     headers: {
                         "x-auth-token": token,
@@ -70,7 +70,7 @@ const BlogsUserStoreProvider = ({ children }) => {
     const blogPage = useCallback(
         async (address) => {
             try {
-                const response = await axios.get(`/api/blog/${address}`);
+                const response = await axios.get(`${api}/api/blog/${address}`);
                 setBlog(response.data.blog);
                 setComment(response.data.comment);
             } catch (error) {

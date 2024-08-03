@@ -21,7 +21,7 @@ const AddBlog = () => {
         const token = localStorage.getItem("token");
 
         try {
-            const response = await axios.post(`/api/blog`, formData, {
+            const response = await axios.post(`${api}/api/blog`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "x-auth-token": token,
