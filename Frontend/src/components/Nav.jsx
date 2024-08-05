@@ -54,9 +54,9 @@ const Nav = () => {
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <Link className="navbar-brand" to="/">
                         Blogify
-                    </a>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -74,13 +74,13 @@ const Nav = () => {
                     >
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className="nav-link active"
                                     aria-current="page"
                                     href="/"
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             {user ? (
                                 <>
