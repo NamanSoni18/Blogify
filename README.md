@@ -25,7 +25,6 @@ Blogify is a Full Stack Blog Application built using ReactJS, NodeJS, ExpressJS,
 
 The project has the following structure:
 
-    ```sh
     root
     │   README.md
     │   package.json
