@@ -27,14 +27,14 @@ The project has the following structure:
 
     root
     │   README.md
-    │   package.json
+    │   Images
     │   ...
-    └───frontend
+    └───Frontend
     │   └───src
     │       └───components
-    │       └───pages
+    │       └───App.jsx
     │       └───...
-    └───backend
+    └───Backend
         └───controllers
         └───models
         └───routes
