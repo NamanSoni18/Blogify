@@ -51,7 +51,7 @@ The project has the following structure:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/NamanSoni18/Blogify.git
 
 2. Navigate to the backend directory and install dependencies:
     ```sh
